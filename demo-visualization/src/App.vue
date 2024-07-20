@@ -41,6 +41,21 @@ import MapChart from "./components/MapChart.vue";
 import VerticalBar from "./components/VerticalBar.vue";
 import RingBar from "./components/RingBar.vue";
 import WordCloud from "./components/WordCloud.vue";
+
+import { getVisualization } from "./api/visualization";
+import { ref } from "vue";
+
+const data = ref();
+
+const loadData = async () => {
+  data.value = await getVisualization();
+};
+
+
+// 间隔三秒 变化数据
+setInterval(() => {
+  loadData();
+}, 3000);
 </script>
 
 <style lang="scss" scoped>
