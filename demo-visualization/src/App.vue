@@ -1,11 +1,12 @@
 <template>
   <div
     class="bg-[url('assets/imgs/bg.jpg')] bg-cover bg-center h-screen p-5 flex overflow-hidden"
+    v-if="data"
   >
     <!-- 左 -->
     <div class="flex-1 mr-5 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- 横向柱状图 -->
-      <HorizontalBar class="h-1/2 box-border pb-4"></HorizontalBar>
+      <HorizontalBar class="h-1/2 box-border pb-4" :data="data.regionData"></HorizontalBar>
       <!-- 雷达图 -->
       <RadarBar class="h-1/2 box-border pb-4"></RadarBar>
       <!-- 数据传递关系图 -->
@@ -51,8 +52,7 @@ const loadData = async () => {
   data.value = await getVisualization();
 };
 
-
-// 间隔三秒 变化数据
+// 间隔三秒 动态获取数据
 setInterval(() => {
   loadData();
 }, 3000);

@@ -12,4 +12,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  server: {
+    // 热更新
+    hmr: true,
+  },
 });
