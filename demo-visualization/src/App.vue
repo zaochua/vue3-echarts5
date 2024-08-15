@@ -8,7 +8,7 @@
       <!-- 横向柱状图 -->
       <HorizontalBar class="h-1/2 box-border pb-4" :data="data.regionData"></HorizontalBar>
       <!-- 雷达图 -->
-      <RadarBar class="h-1/2 box-border pb-4"></RadarBar>
+      <RadarBar class="h-1/2 box-border pb-4" :data="data.riskData"></RadarBar>
       <!-- 数据传递关系图 -->
       <Relation class="h-1/2"></Relation>
     </div>
