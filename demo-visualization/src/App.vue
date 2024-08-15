@@ -26,7 +26,7 @@
       <!-- 竖向柱状图 -->
       <VerticalBar class="h-1/2 box-border pb-4" :data="data.serverData"></VerticalBar>
       <!-- 环形图 -->
-      <RingBar class="h-1/2 box-border pb-4"></RingBar>
+      <RingBar class="h-1/2 box-border pb-4" :data="data.abnormalData"></RingBar>
       <!-- 文档云图 -->
       <WordCloud class="h-1/2"></WordCloud>
     </div>
