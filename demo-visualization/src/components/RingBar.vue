@@ -35,6 +35,7 @@ onMounted(() => {
 
 const getSeriesData = () => {
   const series = [];
+  // 每一个环就是两个饼图叠加
   props.data.abnormals.forEach((item, index) => {
     // 盖在上层有数值的环
     series.push({
