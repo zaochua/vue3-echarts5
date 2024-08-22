@@ -1,5 +1,4 @@
 <template>
-  <div style="color: #FFF;position: absolute;">111</div>
   <div
     class="bg-[url('assets/imgs/bg.jpg')] bg-cover bg-center h-screen p-5 flex overflow-hidden"
     v-if="data"
