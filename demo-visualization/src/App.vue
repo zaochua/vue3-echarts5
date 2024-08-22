@@ -10,7 +10,7 @@
       <!-- 雷达图 -->
       <RadarBar class="h-1/2 box-border pb-4" :data="data.riskData"></RadarBar>
       <!-- 数据传递关系图 -->
-      <Relation class="h-1/2"></Relation>
+      <Relation class="h-1/2" :data="data.relationData"></Relation>
     </div>
     <!-- 中 -->
     <div class="w-1/2 mr-5 flex flex-col">
@@ -28,7 +28,7 @@
       <!-- 环形图 -->
       <RingBar class="h-1/2 box-border pb-4" :data="data.abnormalData"></RingBar>
       <!-- 文档云图 -->
-      <WordCloud class="h-1/2"></WordCloud>
+      <WordCloud class="h-1/2" :data="data.wordCloudData"></WordCloud>
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@ const loadData = async () => {
 // 间隔三秒 动态获取数据
 setInterval(() => {
   loadData();
-}, 3000);
+}, 1000);
 </script>
 
 <style lang="scss" scoped>
