@@ -8,7 +8,8 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import * as echarts from "echarts";
-import 'echarts-wordcloud'
+// 词云的包
+import "echarts-wordcloud";
 
 const props = defineProps({
   data: {
@@ -34,12 +35,44 @@ onMounted(() => {
   renderChart();
 });
 
+// 随机生成RGB颜色值
+const randomRGB = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  return `rgb(${r},${g},${b})`;
+};
 
 // 构建option配置对象
 const renderChart = () => {
   const options = {
-    
-  }
+    series: [
+      {
+        type: "wordCloud",
+        // 文字大小范围
+        sizeRange: [8, 46],
+        // 旋转范围
+        rotationRange: [0, 0],
+        // 间距
+        girdSize: 0,
+        // 动画
+        layoutAnimation: true,
+        // 文字样式
+        textStyle: {
+          color: randomRGB,
+        },
+        // 高亮字体
+        emphasis: {
+          textStyle: {
+            fontWeight: "bold",
+            color: "#000",
+          },
+        },
+        data: props.data.datas,
+      },
+    ],
+  };
 
   myChart.value.setOption(options);
 };
