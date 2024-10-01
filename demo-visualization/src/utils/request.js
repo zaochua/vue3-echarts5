@@ -8,7 +8,7 @@ const service = axios.create({
 // 请求拦截
 service.interceptors.request.use(
   (config) => {
-    config.headers.icode = "";
+    config.headers.icode = "hellosunday";
     return config;
   },
   (err) => {
